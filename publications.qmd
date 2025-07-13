@@ -1,0 +1,7 @@
+---
+title: "Publications"
+bibliography: pisces.bib
+csl: apa-with-abstract.csl
+nocite: |
+  @*
+---

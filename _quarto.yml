@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  favicon: images/logo.png
+  title: "Pisces Research"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - publications.qmd
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cyborg
+      - brand
+    css: styles.css
+    toc: true
+
+
+
