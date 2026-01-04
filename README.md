@@ -1,2 +1,2 @@
-# website-planning
-Planning for the Pisces website - a private repo for issues and thoughts
+# pisces-research.github.io
+The Pisces Research website, deployed on GitHub pages.
