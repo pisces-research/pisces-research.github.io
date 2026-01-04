@@ -3,11 +3,13 @@
     position: absolute;
     top: 40vh;
     left: 30vw;
+    width: 60vw;
   }
 
 #pisces-logo {
   width: 60vw;
   overflow: visible;
+  margin-left: auto;
 }
 
 #pisces-logo #logo-species path {

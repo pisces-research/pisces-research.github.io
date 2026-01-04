@@ -19,7 +19,7 @@ magnitude = [0.349937749111155,0.410655752752346,0.326279794623039,0.35345468195
 bv = [0.312859835075429,0.299093214498829,0.863293977416319,0.320139000800948,0.336552878364737,0.347496738372415,0.870228028458252,0.352395906869619,0.231772266343355,0.226049788697945,0.647264667078035,0.344039088053988,0.19889067044082,0.58625525236722,0.53686962389146,0.30820195895505,0.267402570880001,0.356650132052572,0.859847698659206,0.729788874269057,0.0725847815244687,1]
 
 for x, y, mag, b in zip(xPos, yPos, magnitude, bv):
-  print(f'![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/neon-star7.png){{.star style="opacity: {b}; transform: translate(-50%, -50%) translate(50vw, 50vh) translate({(x-.5)*80:.0f}vmin, {(.5-y)*80:.0f}vmin) rotate({uniform(0,360):.3}deg) scale({mag:.4f})"}}')
+  print(f'![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/neon-star7.png){{.star data-bv="{b}" style="opacity: {b}; transform: translate(-50%, -50%) translate(50vw, 50vh) translate({(x-.5)*80:.0f}vmin, {(.5-y)*80:.0f}vmin) rotate({uniform(0,360):.3}deg) scale({mag:.4f})"}}')
 ```
 ```{=html}
       </section>    
