@@ -1,0 +1,54 @@
+/* css styles */
+#pisces-welcome {
+    position: absolute;
+    top: 40vh;
+    left: 30vw;
+    width: 60vw;
+  }
+
+#pisces-logo {
+  width: 60vw;
+  overflow: visible;
+  margin-left: auto;
+}
+
+#pisces-logo #logo-species path {
+    opacity: 0;
+ }
+    
+#pisces-logo #logo-words {
+    opacity: 0;
+}
+
+.star {
+    position: absolute;
+    opacity: 0;
+  }
+
+#starfield {
+   position: absolute;
+   width: 100vw;
+   height: calc(-61px + 100vh);
+   overflow: hidden;
+   background: #000;
+   margin-top: -31px;
+}
+
+.byline {
+    margin: 0em 0vw 0em 35vw;
+    width: 10vh;
+    opacity: 0;
+}
+
+@media (max-width: 600px) {
+  #byline-text-intro {
+    margin-left: 25vw;
+  }
+}
+
+.species-info {
+    position: absolute;
+    top: 85vh;
+    left: 30vw;
+    opacity: 0;
+}
