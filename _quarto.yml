@@ -9,7 +9,8 @@ website:
       - href: index.qmd
         text: Home
       - publications.qmd
-      - about.qmd
+      - href: about.qmd
+        text: About
 
 format:
   html:
@@ -18,6 +19,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-

@@ -1,5 +1,9 @@
 ---
-title: "About"
+title: "About Pisces"
 ---
 
-About this site
+Pisces Research Limited (Pisces) is a family company providing independent fisheries research services in New Zealand. It is led by [David Middleton](https://orcid.org/0000-0002-9286-9074), who has more than 20 years' experience as part of the New Zealand fisheries science community. Pisces focuses on providing useful fisheries research with outputs that are informative for fisheries managers and provide a basis for making fisheries management decisions.
+
+Pisces Research is a member of the [Kahawai Collective](https://kahawai.org.nz/), a non-profit group of fisheries research providers that work together to support efficient research into New Zealand fisheries and marine ecosystems.
+
+Pisces supports the work of Predator Free Churton Park, with Rachel Middleton (Pisces' Sampling Programme Manager) coordinating this group, working with both local volunteers and Wellington City Council staff.
