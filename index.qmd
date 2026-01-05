@@ -4,11 +4,7 @@ execute:
   output: asis
 format: 
   html:
-    css: landing.css
-license: "CC BY"
-copyright: 
-  holder: Pisces Research Limited
-  year: 2026    
+    css: landing.css 
 ---
 
 ```{=html}
