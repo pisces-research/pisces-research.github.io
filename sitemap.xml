@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pisces-research.github.io/about.html</loc>
-    <lastmod>2026-01-04T02:46:47.629Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pisces-research.github.io/index.html</loc>
-    <lastmod>2026-01-04T02:46:47.631Z</lastmod>
+    <lastmod>2026-01-04T23:41:55.590Z</lastmod>
   </url>
   <url>
     <loc>https://pisces-research.github.io/publications.html</loc>
     <lastmod>2026-01-04T02:46:47.631Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pisces-research.github.io/index.html</loc>
+    <lastmod>2026-01-04T23:52:21.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pisces-research.github.io/LICENSE.html</loc>
+    <lastmod>2026-01-04T23:41:55.590Z</lastmod>
   </url>
 </urlset>
