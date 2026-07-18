@@ -1,5 +1,6 @@
 project:
   type: website
+  post-render: post_process_bib.py
 
 website:
   favicon: images/logo.png

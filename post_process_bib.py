@@ -8,24 +8,32 @@ def process_html_files():
     
     for root, _, files in os.walk(output_dir):
         for file in files:
-            if file.endswith(".html"):
+            if file.endswith("publications.html"):
                 file_path = os.path.join(root, file)
                 
                 # Read the rendered HTML
                 with open(file_path, "r", encoding="utf-8") as f:
                     soup = BeautifulSoup(f.read(), "html.parser")
-                
-                # --- EXAMPLE MODIFICATION ---
-                # Add a custom attribute or modify tags
-                for header in soup.find_all(["h1", "h2"]):
-                    header["data-processed"] = "true"
-                
-                # Inject a custom tracking script or CSS string
-                custom_script = soup.new_tag("script")
-                custom_script.string = "console.log('HTML post-processed successfully!');"
-                if soup.body:
-                    soup.body.append(custom_script)
-                # ----------------------------
+
+                # The abstract field of the bib file is put in a block with class 'csl-block'
+                # Fortunately this class is not used otherwise
+                abstracts = soup.find_all('div', class_='csl-block')
+
+                for abs in abstracts:
+                    contents = abs.contents[:]
+
+                    # Create a collapsible (details) block with Abstract as the title
+                    abs_collapse = soup.new_tag('details')
+                    abs_header = soup.new_tag('summary')
+                    abs_header.string = "Abstract"
+                    abs_collapse.insert(0, abs_header)
+
+                    # Put the existing contents of the csl-block into the collapsible block
+                    for item in contents:
+                        abs_collapse.append(item)
+
+                    abs.clear()
+                    abs.append(abs_collapse)      
                 
                 # Overwrite the file with changes
                 with open(file_path, "w", encoding="utf-8") as f:
@@ -34,4 +42,3 @@ def process_html_files():
 
 if __name__ == "__main__":
     process_html_files()
-    
