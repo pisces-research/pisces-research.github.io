@@ -34,7 +34,20 @@ def process_html_files():
 
                     abs.clear()
                     abs.append(abs_collapse)      
-                
+
+                # The links to the full document are better shown as icons rather than as the full URL
+                links = soup.select('div.csl-entry a')
+
+                for link in links:
+                    icon = soup.new_tag('i', **{'class': 'bi bi-filetype-pdf'})
+
+                    link.clear()
+                    link.append(icon)
+                    link['aria-label']='Link to document'
+
+                    spacer = soup.new_string('\u2003')
+                    link.insert_before(spacer)
+
                 # Overwrite the file with changes
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(str(soup))
