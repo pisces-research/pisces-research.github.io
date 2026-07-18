@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 from bs4 import BeautifulSoup
 
 def process_html_files():
@@ -19,11 +20,19 @@ def process_html_files():
                 # Fortunately this class is not used otherwise
                 abstracts = soup.find_all('div', class_='csl-block')
 
+                # Reinstate paragraphs in the abstract
+                for abs in abstracts:
+                    #for element in list(abs.descendants):
+
+                    abs_text = abs.get_text()
+                    abs_para = re.sub(r"(?<=\w)[.](?=\w)", ".<br><br>", abs_text)
+                    abs.string.replace_with(abs_para, "html.parser")           
+
                 for abs in abstracts:
                     contents = abs.contents[:]
 
                     # Create a collapsible (details) block with Abstract as the title
-                    abs_collapse = soup.new_tag('details')
+                    abs_collapse = soup.new_tag('details', style = 'text-indent: 0em;')
                     abs_header = soup.new_tag('summary')
                     abs_header.string = "Abstract"
                     abs_collapse.insert(0, abs_header)
@@ -33,7 +42,8 @@ def process_html_files():
                         abs_collapse.append(item)
 
                     abs.clear()
-                    abs.append(abs_collapse)      
+                    abs.append(abs_collapse)
+
 
                 # The links to the full document are better shown as icons rather than as the full URL
                 links = soup.select('div.csl-entry a')
