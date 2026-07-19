@@ -22,13 +22,17 @@ def process_html_files():
 
                 # Reinstate paragraphs in the abstract
                 for abs in abstracts:
-                    parts = re.split(r"(?<=\w)[.](?=\w)", abs.get_text())
+                    parts = re.split(r"(?<=\w)[.](?=[A-Z])", abs.get_text())
 
                     abs.clear()
                     
                     for part in parts:
                         para = soup.new_tag('p')
-                        para.append(part + '.')
+
+                        if not part.endswith('.'):
+                            part = part + '.'
+
+                        para.append(part)
 
                         abs.append(para)
 
