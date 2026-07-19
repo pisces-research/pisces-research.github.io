@@ -1,3 +1,6 @@
+# Called from _quarto.yml to fix up the publications.html file
+# lua filters initially seemed like a better approach but these cannot be applied to a bibliography; see https://github.com/quarto-dev/quarto-cli/issues/9726
+
 import os
 import sys
 import re
