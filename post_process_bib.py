@@ -28,7 +28,7 @@ def process_html_files():
                     
                     for part in parts:
                         para = soup.new_tag('p')
-                        para.append(part)
+                        para.append(part + '.')
 
                         abs.append(para)
 
