@@ -5,3 +5,14 @@ csl: apa-with-abstract.csl
 nocite: |
   @*
 ---
+
+<style>
+details {
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+details[open]{
+  border: 2px solid;
+  border-radius: 6px;
+}
+</style>

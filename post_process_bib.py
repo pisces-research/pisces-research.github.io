@@ -22,28 +22,17 @@ def process_html_files():
 
                 # Reinstate paragraphs in the abstract
                 for abs in abstracts:
-                    for element in list(abs.descendants):
-                        if isinstance(element, NavigableString) and bool(re.search(r"(?<=\w)[.](?=\w)", element)):
-                            # Split text by newline
-                            parts = re.split(r"(?<=\w)[.](?=\w)", element)
-                            
-                            # Replace the original text node with the first part
-                            element.replace_with(parts[0])
-                            current_node = div.find(text=parts[0])
-                            
-                            # Insert <br> tags and the remaining text parts sequentially
-                            for part in parts[1:]:
-                                br = soup.new_tag("br")
-                                current_node.insert_after(br)
-                                
-                                text_node = NavigableString(part)
-                                br.insert_after(text_node)
-                                current_node = text_node
+                    parts = re.split(r"(?<=\w)[.](?=\w)", abs.get_text())
 
-                    # abs_text = abs.get_text()
-                    # abs_para = re.sub(r"(?<=\w)[.](?=\w)", ".<br><br>", abs_text)
-                    # abs.string.replace_with(abs_para, "html.parser")           
+                    abs.clear()
+                    
+                    for part in parts:
+                        para = soup.new_tag('p')
+                        para.append(part)
 
+                        abs.append(para)
+
+                # Make abstracts collapsible
                 for abs in abstracts:
                     contents = abs.contents[:]
 
